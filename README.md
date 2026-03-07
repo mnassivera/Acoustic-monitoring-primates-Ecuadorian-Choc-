@@ -11,8 +11,10 @@ We applied this classifier to our entire recordings data. We set the model's con
 
 See the Methods of the article for further details on the analyses.
 
-Files and variables
+# Files and variables
+
 File: Data_analysis.Rmd
+
 Description: R Markdown document implementing the full data analysis pipeline for the study. It covers five main stages.
 
 First, it imports and preprocesses the data.
@@ -20,10 +22,13 @@ Second, it provides a descriptive overview of the dataset, including summary sta
 Third, it fits GAMs separately for the Brown-headed Spider Monkey and the Ecuadorian Mantled Howler Monkey. The scale of effect of landscape predictors is first evaluated by comparing buffer sizes. Backward variable selection is then performed, guided by AIC for occurrence models.
 Fourth, for occurrence models, multi-model inference is applied: all models within ΔAICc ≤ 2 are retained and their predictions are averaged using Akaike weights. Model performance is evaluated through leave-one-out cross-validation (LOOCV), with AUC, Brier score, and classification accuracy as metrics.
 Fifth, selected models are used to generate spatially continuous habitat suitability predictions across the prediction grid, which are then visualized as maps and summarized by habitat suitability class.
+
 File: Extract_metrics_functions.R
+
 Description: R script defining the functions used to extract and compute all landscape metrics reported in the plots_description and grid sheets. This includes the extraction of forest cover, distance to water and distance to forest edge from ESA WorldCover and JRC TMF2, the Forest Landscape Integrity Index (FLII), canopy height, NDVI, and road density.
 
 File: Data.xlsx
+
 Description: This dataset contains four sheets.
 
 plots_description provides the characteristics of all field sites where an ARU was deployed. For each site, it includes identifiers (Plot_ID, Jocotoco_ID, Soundbox_ID), geographic information (longitude, latitude, elevation), and a suite of landscape metrics: Forest Landscape Integrity Index (FLII) from Grantham et al. at 500 m and 2000 m buffers; forest cover derived from ESA WorldCover, JRC TMF2, and a combination of both products at 500 m and 2000 m buffers; canopy height from Lang et al. and Tolan et al. at 100 m buffers; NDVI from Google Earth Engine at 500 m and 2000 m buffers; distance to water and to forest edge (using both ESA and JRC basemaps); and road density from the GRIP dataset at 500 m and 2000 m buffers. For Reassembly plots, additional attributes describe the surrounding matrix, plot category, and regeneration year for secondary forest sites.

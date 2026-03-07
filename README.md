@@ -3,7 +3,7 @@ Data from: Acoustic monitoring reveals contrasting responses of two endangered p
 
 We applied passive acoustic monitoring (PAM) combined with a deep learning-based classification algorithm to detect vocalizations of two endangered primates—the Ecuadorian mantled howler monkey (Alouatta palliata aequatorialis) and the brown-headed spider monkey (Ateles fusciceps fusciceps)—across primary, secondary, and agricultural landscapes in the Canandé and nearby watersheds.
 
-We selected 163 plots at the centre of which we deployed an Autonomous Recording Unit (ARU) : BAR-LT recorder (Frontier Labs) (175 plots) or a Song Meter Mini 2 Li-ion recorder (Wildlife Acoustics) (23 plots), equipped with a downward-facing omnidirectional microphone mounted approximately 1.70 m above the ground. Recorders captured 2-min files every 15 min throughout the day.
+We selected 163 plots at the centre of which we deployed an Autonomous Recording Unit (ARU) : BAR-LT recorder (Frontier Labs) (140 plots) or a Song Meter Mini 2 Li-ion recorder (Wildlife Acoustics) (23 plots), equipped with a downward-facing omnidirectional microphone mounted approximately 1.70 m above the ground. Recorders captured 2-min files every 15 min throughout the day.
 
 Training data included recordings from ARUs and field collections. The vocalizations were then segmented into 3-second clips to train the model with BirdNET Analyzer. To optimize model performance, we applied the built-in autotune function to search for the best set of hyperparameters (number of trials: 50, executions per trial: 1).
 

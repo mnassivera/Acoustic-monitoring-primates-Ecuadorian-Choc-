@@ -1,7 +1,7 @@
 ---
 title: "Monitoring Vocalizations of Threatened Monkey Species in Ecuadorian Secondary Tropical Forests"
 subtitle: "Data Analysis"
-author: "Marc Nassivera"
+author: ""
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 output:
   pdf_document:
@@ -76,7 +76,7 @@ species_list <- c("Ecuadorian mantled howler monkey", "Brown-headed Spider Monke
 
 ```{r, include = FALSE}
 # Raw observations import
-df_observations <- read.xlsx("C:/Users/nassi/Desktop/Research/MKY_Monkeys/MKY_Data/MKY_Data.xlsx", sheet = "observations_filtered") %>%
+df_observations <- read.xlsx("MKY_Data.xlsx", sheet = "observations_filtered") %>%
   filter(is.na(Check)==TRUE) %>% # Remove lines that were manually checked with no detection found
   select(-Check) # Remove check column
 ```
@@ -106,7 +106,7 @@ df_observations <- df_observations %>%
 
 ```{r, include = FALSE}
 # Description of study sites import
-df_plots <- read.xlsx("C:/Users/nassi/Desktop/Research/MKY_Monkeys/MKY_Data/MKY_Data.xlsx", sheet = "plots_description") %>%
+df_plots <- read.xlsx("MKY_Data.xlsx", sheet = "plots_description") %>%
     filter(!duplicated(Jocotoco_ID) | is.na(Jocotoco_ID)) %>%
     filter(!Jocotoco_ID %in% c("G04_2025", "G22_2025", "G03_2025", "G13_2025", "GW62_2025", "G14_2025", "G05_2025", "G28_2025")) # These plots were not analyzed
 ```
@@ -122,7 +122,7 @@ df_plots <- df_plots %>%
 
 ```{r, include = FALSE}
 # Grid import
-df_grid <- read.xlsx("C:/Users/nassi/Desktop/Research/MKY_Monkeys/MKY_Data/MKY_Data.xlsx", sheet = "grid")
+df_grid <- read.xlsx("MKY_Data.xlsx", sheet = "grid")
 
 sf_grid <- st_as_sf(
   df_grid,
@@ -2086,4 +2086,5 @@ ggplot(df_grid_sf) +
 ```{r}
 
 ```
+
 

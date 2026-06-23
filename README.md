@@ -1,5 +1,5 @@
 # Acoustic-monitoring-primates-Ecuadorian-Choc-
-Data from: Acoustic monitoring reveals contrasting responses of two endangered primates to primary forest degradation in the Ecuadorian Chocó
+Data from: Acoustic monitoring reveals different responses of two endangered primates to old-growth forest loss in the Ecuadorian Chocó
 
 We applied passive acoustic monitoring (PAM) combined with a deep learning-based classification algorithm to detect vocalizations of two endangered primates—the Ecuadorian mantled howler monkey (Alouatta palliata aequatorialis) and the brown-headed spider monkey (Ateles fusciceps fusciceps)—across primary, secondary, and agricultural landscapes in the Canandé and nearby watersheds.
 
@@ -7,7 +7,7 @@ We selected 163 plots at the centre of which we deployed an Autonomous Recording
 
 Training data included recordings from ARUs and field collections. The vocalizations were then segmented into 3-second clips to train the model with BirdNET Analyzer. To optimize model performance, we applied the built-in autotune function to search for the best set of hyperparameters (number of trials: 50, executions per trial: 1).
 
-We applied this classifier to our entire recordings data. We set the model's confidence threshold to 0.99 to maximize precision, thereby minimizing false detections. Manual verification was conducted for all sites exhibiting ≤5 detections per species. This examination revealed elevated false positive rates for spider monkey classifications. Consequently, all spider monkey detections were manually verified to ensure accuracy. We thus included a column 'Check' in the dataset and filtered the data for future analyses.
+Model performance was evaluated on a validation dataset of manually labelled audio files containing 612 howler monkey, 382 spider monkey, and 2,110 background-only clips. Precision and recall were computed from a confusion matrix of manual labels versus classifier output. We set the confidence threshold to 0.99 to maximise precision and minimise false detections. The classifier achieved high precision (macro-precision: 0.98; Tables S3–S4) but low recall (macro-recall: 0.47), indicating that while false positives were minimised, a substantial proportion of vocalisations were missed. However, for the purposes of this study—screening large acoustic datasets to identify sites likely to contain target species—low recall is acceptable given the large volume of audio collected (total: 17,168 hours across 163 sites) and the frequent occurrence of multiple vocalisations within single recordings. For both species, we manually verified detections at each site until a true vocalization was confirmed, ensuring reliable presence/absence data for habitat suitability modelling. This step was critical for spider monkeys’ detections due to elevated false positive rate.
 
 See the Methods of the article for further details on the analyses.
 
